@@ -48,4 +48,8 @@ android {
             isMinifyEnabled = false
         }
     }
+
+    buildFeatures {
+        dataBinding = true
+    }
 }
