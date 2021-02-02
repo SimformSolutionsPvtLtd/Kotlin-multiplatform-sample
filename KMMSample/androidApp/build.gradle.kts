@@ -1,23 +1,47 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
+    id(Plugins.ANDROID_APPLICATION)
+    kotlin(Plugins.ANDROID)
+    id(Plugins.KOTLIN_KAPT)
 }
 
 dependencies {
-    implementation(project(":shared"))
-    implementation("com.google.android.material:material:1.2.1")
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.2")
+    implementation(defaultFileTree())
+
+    // Shared module
+    implementation(project(Libs.shared))
+
+    //Material Design
+    implementation(Libs.MATERIAL)
+
+    //SDP SSP
+    implementation(Libs.SDP)
+    implementation(Libs.SSP)
+
+    // UI
+    implementation(Libs.APPCOMPAT)
+    implementation(Libs.CONSTRAINT_LAYOUT)
+    implementation(Libs.RECYCLERVIEW)
+
+    // View model
+    implementation(Libs.VIEW_MODEL)
+    implementation(Libs.VIEW_MODEL_KTX)
+
+    // Coroutines
+    implementation(Libs.COROUTINES_CORE)
+    implementation(Libs.COROUTINES_ANDROID)
+
+    // Glide
+    implementation(Libs.GLIDE)
 }
 
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(Version.COMPILE_SDK)
     defaultConfig {
-        applicationId = "com.example.kmmsample.androidApp"
-        minSdkVersion(24)
-        targetSdkVersion(29)
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = App.ID
+        minSdkVersion(Version.MIN_SDK)
+        targetSdkVersion(Version.TARGET_SDK)
+        versionCode = App.Version.CODE
+        versionName = App.Version.NAME
     }
     buildTypes {
         getByName("release") {

@@ -1,8 +1,9 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
-    kotlin("multiplatform")
-    id("com.android.library")
+    kotlin(SharedPlugins.SERIALIZATION)
+    kotlin(SharedPlugins.MULTIPLATFORM)
+    id(SharedPlugins.SHARED_MODULE)
 }
 
 kotlin {
@@ -15,7 +16,20 @@ kotlin {
         }
     }
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                // Coroutines
+                implementation(SharedLibs.COROUINES_CORE)
+                //Ktor features
+                implementation(SharedLibs.KTOR)
+                implementation(SharedLibs.KTOR_SERIALIZER)
+                //Logger
+                implementation(SharedLibs.LOGGER)
+                implementation(SharedLibs.KTOR_LOGGING)
+                // KotlinX Serialization
+                implementation(SharedLibs.KOTLINX_SERIALIZATION)
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test-common"))
@@ -24,7 +38,13 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("com.google.android.material:material:1.2.1")
+                // Ktor and it's features
+                implementation(SharedLibs.KTOR_ANDROID)
+                implementation(SharedLibs.KTOR_LOGGING_ANDROID)
+                implementation(SharedLibs.KTOR_JSON_ANDROID)
+                implementation(SharedLibs.KTOR_SERIALIZER_ANDROID)
+                // Kotlinx serializer
+                implementation(SharedLibs.KOTLINX_SERIALIZER_ANDROID)
             }
         }
         val androidTest by getting {
@@ -33,17 +53,22 @@ kotlin {
                 implementation("junit:junit:4.13")
             }
         }
-        val iosMain by getting
+        val iosMain by getting {
+            dependencies {
+                //Ktor
+                implementation(SharedLibs.KTOR_IOS)
+            }
+        }
         val iosTest by getting
     }
 }
 
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(Version.COMPILE_SDK)
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(24)
-        targetSdkVersion(29)
+        minSdkVersion(Version.MIN_SDK)
+        targetSdkVersion(Version.TARGET_SDK)
     }
 }
 
