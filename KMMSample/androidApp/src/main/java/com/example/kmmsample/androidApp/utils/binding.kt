@@ -1,4 +1,4 @@
-package com.example.kmmsample.androidApp
+package com.example.kmmsample.androidApp.utils
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter

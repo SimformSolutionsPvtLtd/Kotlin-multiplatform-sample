@@ -21,5 +21,5 @@ data class MovieEntity(
     val overview: String,
     @SerialName("poster_path") var posterPath: String
 ) {
-    val picturePoster: String =  "$POSTER_URL$posterPath"
+    val picturePoster: String get() = POSTER_URL + posterPath
 }
