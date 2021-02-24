@@ -12,4 +12,6 @@ struct ConstantStrings {
     static var movieCell = "moviesCell"
     static var votesOutOf = "/ 10"
     static var placeHolderImageName = "placeHolderImage"
+    static var alertTitle = "Alert"
+    static var ok = "ok"
 }

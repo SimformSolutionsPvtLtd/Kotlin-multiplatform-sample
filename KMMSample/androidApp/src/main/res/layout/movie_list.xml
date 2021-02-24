@@ -29,6 +29,7 @@
                 android:layout_height="0dp"
                 android:scaleType="fitXY"
                 app:imageUrl="@{movieEntity.picturePoster}"
+                placeHolder="@{@drawable/placeholder}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/txtMovieName"
                 app:layout_constraintStart_toStartOf="parent"

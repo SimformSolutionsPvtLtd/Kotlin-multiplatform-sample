@@ -18,7 +18,7 @@ class MoviesCell: UITableViewCell {
     @IBOutlet weak var lblMovieOverView: UILabel!
     @IBOutlet weak var imgMoviePoster: UIImageView!
     
-    // MARK: - SetUp Movie Details 
+    // MARK: - SetUp Movie Details
     func setUpMoviesData(movieEntity: MovieEntity) {
         lblMovieName.text = movieEntity.title
         lblMovieRating.text = "\(movieEntity.voteAverage) \(ConstantStrings.votesOutOf)"

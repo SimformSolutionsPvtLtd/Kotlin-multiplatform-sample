@@ -10,4 +10,5 @@ const val UNAUTHORIZED_RESPONSE_CODE = 401
 // Movie model
 const val POSTER_URL = "https://image.tmdb.org/t/p/original"
 const val HEADER_AUTHORIZATION = "api_key"
-const val API_KEY = "e639a83d1be2c4a737bd1a428c62a2ab"
+// Please add your private api key here 
+const val API_KEY = ""
