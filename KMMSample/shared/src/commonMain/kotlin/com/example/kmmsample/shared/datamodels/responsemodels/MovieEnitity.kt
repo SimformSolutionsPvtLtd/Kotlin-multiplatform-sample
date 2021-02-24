@@ -1,5 +1,6 @@
 package com.example.kmmsample.shared.datamodels.responsemodels
 
+import com.example.kmmsample.shared.utils.POSTER_URL
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -18,5 +19,7 @@ data class MovieEntity(
     @SerialName("backdrop_path") val backdropPath: String,
     val adult: Boolean,
     val overview: String,
-    @SerialName("poster_path") val posterPath: String
-)
+    @SerialName("poster_path") var posterPath: String
+) {
+    val picturePoster: String =  "$POSTER_URL$posterPath"
+}

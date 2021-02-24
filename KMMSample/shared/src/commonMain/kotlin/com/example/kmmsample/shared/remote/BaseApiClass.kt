@@ -1,11 +1,14 @@
 package com.example.kmmsample.shared.remote
 
 import com.example.kmmsample.shared.datamodels.base.CustomException
+import com.example.kmmsample.shared.datamodels.base.Either
 import com.example.kmmsample.shared.datamodels.base.ErrorResponse
 import com.example.kmmsample.shared.utils.CLIENT_REQUEST_EXCEPTION_RANGE
 import com.example.kmmsample.shared.utils.REDIRECT_RESPONSE_EXCEPTION_RANGE
 import com.example.kmmsample.shared.utils.RESPONSE_EXCEPTION_CODE
 import com.example.kmmsample.shared.utils.SERVER_RESPONSE_EXCEPTION_RANGE
+import com.example.kmmsample.shared.datamodels.base.Failure
+import com.example.kmmsample.shared.datamodels.base.Success
 import io.ktor.client.HttpClient
 import io.ktor.client.features.ClientRequestException
 import io.ktor.client.features.HttpResponseValidator
@@ -22,13 +25,21 @@ import io.ktor.client.features.logging.Logging
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
 import kotlinx.serialization.json.Json
+import com.example.kmmsample.shared.datamodels.responsemodels.PopularMoviesResponse
+import com.example.kmmsample.shared.utils.API_KEY
+import com.example.kmmsample.shared.utils.ApiEndPoints
+import com.example.kmmsample.shared.utils.HEADER_AUTHORIZATION
+import io.ktor.client.request.get
+import io.ktor.client.request.host
+import io.ktor.client.request.parameter
 
 class BaseApiClass {
 
     //Create Http Client
-    val httpClient by lazy {
+    private val httpClient by lazy {
         HttpClient {
             defaultRequest {
+                host = ApiEndPoints.BASE.url
                 contentType(ContentType.Application.Json)
             }
             install(Logging) {
@@ -62,6 +73,18 @@ class BaseApiClass {
                 val json = Json { ignoreUnknownKeys = true }
                 serializer = KotlinxSerializer(json)
             }
+        }
+    }
+
+    @Throws(Exception::class)
+    suspend fun getMovies() : Either<CustomException, PopularMoviesResponse>? {
+        return try {
+            val response = httpClient.get<PopularMoviesResponse>(ApiEndPoints.POPULAR_MOVIES.url) {
+                parameter(HEADER_AUTHORIZATION, API_KEY)
+            }
+            Success(response)
+        } catch (e: Exception) {
+            Failure(e as CustomException)
         }
     }
 }
