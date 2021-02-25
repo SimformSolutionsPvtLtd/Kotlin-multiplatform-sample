@@ -6,8 +6,9 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10")
-        classpath("com.android.tools.build:gradle:4.0.1")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.KOTLIN_VERSION}")
+        classpath("com.android.tools.build:gradle:${Version.ANDROID_GRADLE}")
+        classpath("org.jetbrains.kotlin:kotlin-serialization:${Version.KOTLIN_VERSION}")
     }
 }
 
@@ -16,5 +17,6 @@ allprojects {
         google()
         jcenter()
         mavenCentral()
+        jitpack()
     }
 }
