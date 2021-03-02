@@ -28,6 +28,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="fitXY"
+                app:imageUrl="@{movieEntity.picturePoster}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/txtMovieName"
                 app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +74,7 @@
                 android:paddingBottom="@dimen/_1sdp"
                 app:layout_constraintStart_toEndOf="@id/txtRating"
                 app:layout_constraintTop_toTopOf="@id/txtRating"
-                tools:text="@string/txtTMDB" />
+                android:text="@string/txtTMDB" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"

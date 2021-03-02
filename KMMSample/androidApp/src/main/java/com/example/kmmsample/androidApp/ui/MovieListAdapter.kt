@@ -1,13 +1,15 @@
-package com.example.kmmsample.androidApp
+package com.example.kmmsample.androidApp.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kmmsample.androidApp.R
 import com.example.kmmsample.androidApp.databinding.MovieListBinding
+import com.example.kmmsample.androidApp.loadUserImage
 import com.example.kmmsample.shared.datamodels.responsemodels.MovieEntity
 
-class MovieListAdapter() : RecyclerView.Adapter<MovieListAdapter.ViewHolder>() {
+class MovieListAdapter : RecyclerView.Adapter<MovieListAdapter.ViewHolder>() {
 
     private var moviesList = arrayListOf<MovieEntity>()
 
@@ -16,13 +18,13 @@ class MovieListAdapter() : RecyclerView.Adapter<MovieListAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val mBinding: MovieListBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.movie_list, parent, false)
         return ViewHolder(mBinding)
     }
 
-    override fun onBindViewHolder(holder: MovieListAdapter.ViewHolder, position: Int) {
-        holder.bind(moviesList[position], position)
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(moviesList[position])
     }
 
     override fun getItemCount(): Int = moviesList.size
@@ -30,8 +32,8 @@ class MovieListAdapter() : RecyclerView.Adapter<MovieListAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: MovieListBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(userModelItem: MovieEntity, position: Int) {
-            binding.movieEntity = userModelItem
+        fun bind(movieEntity: MovieEntity) {
+            binding.movieEntity = movieEntity
         }
     }
 }
