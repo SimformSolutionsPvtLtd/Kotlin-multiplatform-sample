@@ -6,7 +6,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kmmsample.androidApp.R
 import com.example.kmmsample.androidApp.databinding.MovieListBinding
-import com.example.kmmsample.androidApp.loadUserImage
 import com.example.kmmsample.shared.datamodels.responsemodels.MovieEntity
 
 class MovieListAdapter : RecyclerView.Adapter<MovieListAdapter.ViewHolder>() {

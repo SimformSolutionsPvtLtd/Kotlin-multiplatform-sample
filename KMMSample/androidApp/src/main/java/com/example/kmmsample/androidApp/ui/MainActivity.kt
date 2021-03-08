@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.example.kmmsample.androidApp.BR
 import com.example.kmmsample.androidApp.R
 import com.example.kmmsample.androidApp.base.Status
 import com.example.kmmsample.androidApp.databinding.ActivityMainBinding
