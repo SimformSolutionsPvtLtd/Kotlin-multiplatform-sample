@@ -1,7 +1,7 @@
 package com.example.kmmsample.androidApp.ui
 
+import android.app.AlertDialog
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.kmmsample.androidApp.R
@@ -34,10 +34,15 @@ class MainActivity : AppCompatActivity() {
                 }
                 Status.ERROR -> {
                     viewModel.progressBarVisibility.postValue(false)
-                    Toast.makeText(this, response.throwable?.errorResponse?.status_message, Toast.LENGTH_SHORT).show()
+                    showAlert(response.throwable?.errorResponse?.status_message ?: "")
                 }
             }
         })
+    }
+
+    private fun showAlert(message: String) {
+        AlertDialog.Builder(this).setTitle(getString(R.string.alertTitle)).setMessage(message)
+            .setPositiveButton(android.R.string.ok, null).show()
     }
 
     // SetUp Movie List Adapter
