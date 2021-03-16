@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movieEntity"
+            type="com.simform.kmmsample.shared.datamodels.responsemodels.MovieEntity" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="16dp"
+        android:elevation="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_6sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                app:imageUrl="@{movieEntity.picturePoster}"
+                placeHolder="@{@drawable/placeholder}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/txtMovieName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.25" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtMovieName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:maxLines="2"
+                android:text="@{movieEntity.title}"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Tomb Raider" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@{@string/txtRatingFormat(String.valueOf(movieEntity.voteAverage))}"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/txtMovieName"
+                app:layout_constraintTop_toBottomOf="@id/txtMovieName"
+                tools:text="7.5 / 10" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="@drawable/tmdb"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_1sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_1sdp"
+                app:layout_constraintStart_toEndOf="@id/txtRating"
+                app:layout_constraintTop_toTopOf="@id/txtRating"
+                android:text="@string/txtTMDB" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:text="@{movieEntity.overview}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/txtMovieName"
+                app:layout_constraintStart_toStartOf="@id/txtMovieName"
+                app:layout_constraintTop_toBottomOf="@id/txtRating"
+                tools:text="The most dangerous former operative of the CIA is drawn out of hiding to uncover hidden truths about his past." />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
