@@ -38,5 +38,18 @@ Android App                          |  iOS App
 * Also you can run this project with xCode.
 * Open `iosApp` folder from the project install `pods` with terminal open `.xcworkspace` and run your application. 
 
+## Find this example useful? :heart:
+Support it by joining __[stargazers](https://github.com/SimformSolutionsPvtLtd/Kotlin-multiplatform-sample/stargazers)__ for this repository. :star:
+
+## 🤝 How to Contribute
+
+Whether you're helping us fix bugs, improve the docs, or a feature request, we'd love to have you! :muscle:
+
+Check out our [**Contributing Guide**](https://github.com/SimformSolutionsPvtLtd/Kotlin-multiplatform-sample/blob/master/CONTRIBUTING.md) for ideas on contributing.
+
+## Bugs and Feedback
+
+For bugs, feature requests, and discussion please use [GitHub Issues](https://github.com/SimformSolutionsPvtLtd/Kotlin-multiplatform-sample/issues).
+
 ### LICENSE
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
