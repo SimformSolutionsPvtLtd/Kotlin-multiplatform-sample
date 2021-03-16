@@ -7,7 +7,7 @@
 
         <variable
             name="movieEntity"
-            type="com.example.kmmsample.shared.datamodels.responsemodels.MovieEntity" />
+            type="com.simform.kmmsample.shared.datamodels.responsemodels.MovieEntity" />
     </data>
 
     <androidx.cardview.widget.CardView

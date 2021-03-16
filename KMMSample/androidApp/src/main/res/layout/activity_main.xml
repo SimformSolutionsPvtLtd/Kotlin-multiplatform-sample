@@ -8,7 +8,7 @@
         <import type="android.view.View"/>
         <variable
             name="viewModel"
-            type="com.example.kmmsample.androidApp.ui.MainViewModel" />
+            type="com.simform.kmmsample.androidApp.ui.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
