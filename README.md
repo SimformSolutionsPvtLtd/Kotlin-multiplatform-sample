@@ -33,10 +33,25 @@ Android App                          |  iOS App
 ### How to Run iOS App :-
 
 * Pretty Simple KMM allows you to run and debug your iOS App from Android Studio itself. Just switch from `androidApp` to `iosApp` in your run configurations menu. (Remember :- This app contains `Pods` so we need to install that from Terminal first before running iOS app from Android Studio or xCode) 
+* If you are an Android Developer who wants to explore iOS App or a newbie in iOS development and got confused about how to work with pods, we got you covered!
+You can find everything about pods here : :- https://cocoapods.org/
 * <img src = https://github.com/SimformSolutionsPvtLtd/Kotlin-multiplatform-sample/blob/feature/update_readme/screenshots/Run%20Configurations.png>
 * Does that mean you can simply run iOS App without xCode or macOS machine ? No You still need a macOS ,  xCode (and Simulators) and command line tools installed on your machine to run your iOS App. 
 * Also you can run this project with xCode.
 * Open `iosApp` folder from the project install `pods` with terminal open `.xcworkspace` and run your application. 
+
+## Find this example useful? :heart:
+Support it by joining __[stargazers](https://github.com/SimformSolutionsPvtLtd/Kotlin-multiplatform-sample/stargazers)__ for this repository. :star:
+
+## 🤝 How to Contribute
+
+Whether you're helping us fix bugs, improve the docs, or a feature request, we'd love to have you! :muscle:
+
+Check out our [**Contributing Guide**](https://github.com/SimformSolutionsPvtLtd/Kotlin-multiplatform-sample/blob/master/CONTRIBUTING.md) for ideas on contributing.
+
+## Bugs and Feedback
+
+For bugs, feature requests, and discussion please use [GitHub Issues](https://github.com/SimformSolutionsPvtLtd/Kotlin-multiplatform-sample/issues).
 
 ### LICENSE
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
