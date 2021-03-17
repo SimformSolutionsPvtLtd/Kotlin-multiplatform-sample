@@ -2,7 +2,7 @@
 
 ### What is Kotlin Multiplatform (KMP)
 
-* Kotlin Multiplatform allows you share your business logic on multiple platforms like JavaScript, iOS, and native desktop applications and as a result reducing the amount of time required for development.
+* Kotlin Multiplatform allows you to share your business logic on multiple platforms like android, iOS and native desktop applications and as a result reducing the amount of time required for development.
 
 ### Now what is Kotlin Multiplatform Mobile (KMM) ?
 
@@ -27,7 +27,8 @@ Android App                          |  iOS App
 ### How to Run Android App :- 
 * Open Android Studio 
 * Add KMM Plugin from `Android Studio` -> `Preferences` -> `Plugins` -> `MarketPlace` -> `Search for Kotlin Multiplatform Mobile` -> `Install and Restart Android Studio`
- <img src = https://github.com/SimformSolutionsPvtLtd/Kotlin-multiplatform-sample/blob/master/screenshots/KMM%20Plugin.png>
+<img src = https://github.com/SimformSolutionsPvtLtd/Kotlin-multiplatform-sample/blob/master/screenshots/KMM%20Plugin.png>
+
 * Run app. 
 
 ### How to Run iOS App :-
