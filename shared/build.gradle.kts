@@ -1,8 +1,8 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
-    kotlin(SharedPlugins.SERIALIZATION)
     kotlin(SharedPlugins.MULTIPLATFORM)
+    kotlin(SharedPlugins.SERIALIZATION)
     id(SharedPlugins.SHARED_MODULE)
 }
 
@@ -23,9 +23,6 @@ kotlin {
                 //Ktor features
                 implementation(SharedLibs.KTOR)
                 implementation(SharedLibs.KTOR_SERIALIZER)
-                //Logger
-                implementation(SharedLibs.LOGGER)
-                implementation(SharedLibs.KTOR_LOGGING)
                 // KotlinX Serialization
                 implementation(SharedLibs.KOTLINX_SERIALIZATION)
             }
@@ -40,7 +37,6 @@ kotlin {
             dependencies {
                 // Ktor and it's features
                 implementation(SharedLibs.KTOR_ANDROID)
-                implementation(SharedLibs.KTOR_LOGGING_ANDROID)
                 implementation(SharedLibs.KTOR_JSON_ANDROID)
                 implementation(SharedLibs.KTOR_SERIALIZER_ANDROID)
                 // Kotlinx serializer

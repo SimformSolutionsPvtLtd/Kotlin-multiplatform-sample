@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.simform.kmmsample.androidApp.ui.MainActivity">
+        <activity android:name="com.simform.kmmsample.androidApp.ui.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

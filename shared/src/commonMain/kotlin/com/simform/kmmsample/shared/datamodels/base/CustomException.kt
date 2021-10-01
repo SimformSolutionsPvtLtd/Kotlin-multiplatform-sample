@@ -1,22 +1,17 @@
 package com.simform.kmmsample.shared.datamodels.base
 
-import io.ktor.utils.io.ByteReadChannel
-import io.ktor.utils.io.readUTF8Line
-import kotlinx.serialization.json.Json
-
-// This will fetch error data from the api
+@Suppress("TooGenericExceptionCaught")
 class CustomException(var errorResponse: ErrorResponse?) : Exception() {
 
     companion object {
-        suspend fun getError(responseContent: ByteReadChannel): ErrorResponse? {
-            try {
-                responseContent.readUTF8Line()?.let {
-                    return Json.decodeFromString(ErrorResponse.serializer(), it)
-                }
-            } catch (e: Exception) {
-                throw IllegalArgumentException("not a parsable error")
-            }
-            return null
+
+        fun getDefaultError(errorMessage: String?): ErrorResponse {
+            return ErrorResponse(1, "SOMETHING_WENT_WRONG", false)
+        }
+
+        fun getNoInternetError(): ErrorResponse {
+            return ErrorResponse(1, "NO_INTERNET_CONNECTION", false)
         }
     }
+
 }
