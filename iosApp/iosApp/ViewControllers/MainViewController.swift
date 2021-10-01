@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
             }
             self.progressbar.isHidden = true
             if error != nil {
-                self.showAlert(message: error?.errorResponse?.status_message ?? "")
+                self.showAlert(message: error?.errorResponse?.statusMessage ?? "")
             } else {
                 self.movieList = movies as? [MovieEntity] ?? []
                 self.tblViewMovies.reloadData()

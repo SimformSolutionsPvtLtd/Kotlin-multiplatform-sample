@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 Status.ERROR -> {
                     viewModel.progressBarVisibility.postValue(false)
-                    showAlert(response.throwable?.errorResponse?.status_message ?: "")
+                    showAlert(response.throwable?.errorResponse?.statusMessage ?: "")
                 }
             }
         })

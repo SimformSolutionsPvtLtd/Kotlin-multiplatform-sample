@@ -8,19 +8,14 @@ object SharedLibs {
     const val KTOR = "io.ktor:ktor-client-core:${SharedVersions.KTOR_VERSION}"
     const val KTOR_SERIALIZER = "io.ktor:ktor-client-serialization:${SharedVersions.KTOR_VERSION}"
 
-    //Logger
-    const val LOGGER = "ch.qos.logback:logback-classic:1.2.3"
-    const val KTOR_LOGGING = "io.ktor:ktor-client-logging:${SharedVersions.KTOR_VERSION}"
-
     // KotlinX Serialization
-    const val KOTLINX_SERIALIZATION= "org.jetbrains.kotlinx:kotlinx-serialization-core:" +
-                        SharedVersions.SERIALIZATION_VERSION
+    const val KOTLINX_SERIALIZATION= "org.jetbrains.kotlinx:kotlinx-serialization-json:" +
+            SharedVersions.KOTLINX_SERIALIZATION_VERSION
 
     //Android Specific Libraries
 
     //Ktor and it's features
     const val KTOR_ANDROID = "io.ktor:ktor-client-android:${SharedVersions.KTOR_VERSION}"
-    const val KTOR_LOGGING_ANDROID = "io.ktor:ktor-client-logging-jvm:${SharedVersions.KTOR_VERSION}"
     const val KTOR_JSON_ANDROID =  "io.ktor:ktor-client-json:${SharedVersions.KTOR_VERSION}"
     const val KTOR_SERIALIZER_ANDROID = "io.ktor:ktor-client-serialization-jvm:${SharedVersions.KTOR_VERSION}"
 
